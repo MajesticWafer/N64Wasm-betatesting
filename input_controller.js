@@ -155,17 +155,26 @@ class InputController {
 
             document.getElementById('mobileA').addEventListener( 'touchstart', this.mobilePressA.bind(this), false );
             document.getElementById('mobileB').addEventListener( 'touchstart', this.mobilePressB.bind(this), false );
+            document.getElementById('mobileCLEFT').addEventListener( 'touchstart', this.mobilePressCLEFT.bind(this), false );
+            document.getElementById('mobileCRIGHT').addEventListener( 'touchstart', this.mobilePressCRIGHT.bind(this), false );
             document.getElementById('mobileCUP').addEventListener( 'touchstart', this.mobilePressCUP.bind(this), false );
+            document.getElementById('mobileCDOWN').addEventListener( 'touchstart', this.mobilePressCDOWN.bind(this), false );
             document.getElementById('mobileStart').addEventListener( 'touchstart', this.mobilePressStart.bind(this), false );
             document.getElementById('mobileSelect').addEventListener( 'touchstart', this.mobilePressSelect.bind(this), false );
             document.getElementById('mobileA').addEventListener( 'touchend', this.mobileReleaseA.bind(this), false );
             document.getElementById('mobileB').addEventListener( 'touchend', this.mobileReleaseB.bind(this), false );
+            document.getElementById('mobileCLEFT').addEventListener( 'touchend', this.mobilePressCLEFT.bind(this), false );
+            document.getElementById('mobileCRIGHT').addEventListener( 'touchend', this.mobilePressCRIGHT.bind(this), false );
             document.getElementById('mobileCUP').addEventListener( 'touchend', this.mobilePressCUP.bind(this), false );
+            document.getElementById('mobileCDOWN').addEventListener( 'touchend', this.mobilePressCDOWN.bind(this), false );
             document.getElementById('mobileStart').addEventListener( 'touchend', this.mobileReleaseStart.bind(this), false );
             document.getElementById('mobileSelect').addEventListener( 'touchend', this.mobileReleaseSelect.bind(this), false );
             document.getElementById('mobileA').addEventListener( 'touchmove', function(e){e.preventDefault();}, false );
             document.getElementById('mobileB').addEventListener( 'touchmove', function(e){e.preventDefault();}, false );
+            document.getElementById('mobileCLEFT').addEventListener( 'touchmove', function(e){e.preventDefault();}, false );
+            document.getElementById('mobileCRIGHT').addEventListener( 'touchmove', function(e){e.preventDefault();}, false );
             document.getElementById('mobileCUP').addEventListener( 'touchmove', function(e){e.preventDefault();}, false );
+            document.getElementById('mobileCDOWN').addEventListener( 'touchmove', function(e){e.preventDefault();}, false );
             document.getElementById('mobileStart').addEventListener( 'touchmove', function(e){e.preventDefault();}, false );
             document.getElementById('mobileSelect').addEventListener( 'touchmove', function(e){e.preventDefault();}, false );
 
@@ -190,10 +199,25 @@ class InputController {
         this.Key_Action_B = true;
         this.MobileB = true;
     }
+    mobilePressCLEFT(event){
+        event.preventDefault();
+        this.Key_Action_CLEFT = true;
+        this.MobileCLEFT = true;
+    }
+    mobilePressCRIGHT(event){
+        event.preventDefault();
+        this.Key_Action_CRIGHT = true;
+        this.MobileCRIGHT = true;
+    }
     mobilePressCUP(event){
         event.preventDefault();
         this.Key_Action_CUP = true;
         this.MobileCUP = true;
+    }
+    mobilePressCDOWN(event){
+        event.preventDefault();
+        this.Key_Action_CDOWN = true;
+        this.MobileCDOWN = true;
     }
     mobilePressStart(event){
         event.preventDefault();
@@ -217,11 +241,29 @@ class InputController {
         this.Key_Action_B = false;
         this.MobileB_Counter=0;
     }
+    mobileReleaseCLEFT(event){
+        event.preventDefault();
+        this.MobileCLEFT = false;
+        this.Key_Action_CLEFT = false;
+        this.MobileCLEFT_Counter=0;
+    }
+    mobileReleaseCRIGHT(event){
+        event.preventDefault();
+        this.MobileCRIGHT = false;
+        this.Key_Action_CRIGHT = false;
+        this.MobileCRIGHT_Counter=0;
+    }
     mobileReleaseCUP(event){
         event.preventDefault();
         this.MobileCUP = false;
-        this.Key_Action_CUP = true;
+        this.Key_Action_CUP = false;
         this.MobileCUP_Counter=0;
+    }
+    mobileReleaseCDOWN(event){
+        event.preventDefault();
+        this.MobileCDOWN = false;
+        this.Key_Action_CDOWN = false;
+        this.MobileCDOWN_Counter=0;
     }
     mobileReleaseStart(event){
         event.preventDefault();
