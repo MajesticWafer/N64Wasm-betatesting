@@ -163,10 +163,10 @@ class InputController {
             document.getElementById('mobileSelect').addEventListener( 'touchstart', this.mobilePressSelect.bind(this), false );
             document.getElementById('mobileA').addEventListener( 'touchend', this.mobileReleaseA.bind(this), false );
             document.getElementById('mobileB').addEventListener( 'touchend', this.mobileReleaseB.bind(this), false );
-            document.getElementById('mobileCLEFT').addEventListener( 'touchend', this.mobilePressCLEFT.bind(this), false );
-            document.getElementById('mobileCRIGHT').addEventListener( 'touchend', this.mobilePressCRIGHT.bind(this), false );
-            document.getElementById('mobileCUP').addEventListener( 'touchend', this.mobilePressCUP.bind(this), false );
-            document.getElementById('mobileCDOWN').addEventListener( 'touchend', this.mobilePressCDOWN.bind(this), false );
+            document.getElementById('mobileCLEFT').addEventListener( 'touchend', this.mobileReleaseCLEFT.bind(this), false );
+            document.getElementById('mobileCRIGHT').addEventListener( 'touchend', this.mobileReleaseCRIGHT.bind(this), false );
+            document.getElementById('mobileCUP').addEventListener( 'touchend', this.mobileReleaseCUP.bind(this), false );
+            document.getElementById('mobileCDOWN').addEventListener( 'touchend', this.mobileReleaseCDOWN.bind(this), false );
             document.getElementById('mobileStart').addEventListener( 'touchend', this.mobileReleaseStart.bind(this), false );
             document.getElementById('mobileSelect').addEventListener( 'touchend', this.mobileReleaseSelect.bind(this), false );
             document.getElementById('mobileA').addEventListener( 'touchmove', function(e){e.preventDefault();}, false );
