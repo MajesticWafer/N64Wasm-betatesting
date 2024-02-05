@@ -715,8 +715,10 @@ class InputController {
         if (this.Key_Action_B) mobileString += '1'; else mobileString += '0';
         if (this.Key_Action_Start) mobileString += '1'; else mobileString += '0';
         if (this.Key_Action_Z && !window["myApp"].rivetsData.useZasCMobile) mobileString += '1'; else mobileString += '0';
-        mobileString += '0'; //L
-        mobileString += '0'; //R
+        if (this.Key_Action_L) mobileString += '1'; else mobileString += '0';
+        if (this.Key_Action_R) mobileString += '1'; else mobileString += '0';
+        // mobileString += '0'; //L
+        // mobileString += '0'; //R
         if (this.Key_Action_CUP) mobileString += '1'; else mobileString += '0'; //CUP
         if (this.Key_Action_CDOWN) mobileString += '1'; else mobileString += '0'; //CDOWN
         if (this.Key_Action_CLEFT) mobileString += '1'; else mobileString += '0'; //CLEFT
