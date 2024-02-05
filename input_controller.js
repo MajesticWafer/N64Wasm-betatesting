@@ -155,14 +155,17 @@ class InputController {
 
             document.getElementById('mobileA').addEventListener( 'touchstart', this.mobilePressA.bind(this), false );
             document.getElementById('mobileB').addEventListener( 'touchstart', this.mobilePressB.bind(this), false );
+            document.getElementById('mobileCUP').addEventListener( 'touchstart', this.mobilePressCUP.bind(this), false );
             document.getElementById('mobileStart').addEventListener( 'touchstart', this.mobilePressStart.bind(this), false );
             document.getElementById('mobileSelect').addEventListener( 'touchstart', this.mobilePressSelect.bind(this), false );
             document.getElementById('mobileA').addEventListener( 'touchend', this.mobileReleaseA.bind(this), false );
             document.getElementById('mobileB').addEventListener( 'touchend', this.mobileReleaseB.bind(this), false );
+            document.getElementById('mobileCUP').addEventListener( 'touchend', this.mobilePressCUP.bind(this), false );
             document.getElementById('mobileStart').addEventListener( 'touchend', this.mobileReleaseStart.bind(this), false );
             document.getElementById('mobileSelect').addEventListener( 'touchend', this.mobileReleaseSelect.bind(this), false );
             document.getElementById('mobileA').addEventListener( 'touchmove', function(e){e.preventDefault();}, false );
             document.getElementById('mobileB').addEventListener( 'touchmove', function(e){e.preventDefault();}, false );
+            document.getElementById('mobileCUP').addEventListener( 'touchmove', function(e){e.preventDefault();}, false );
             document.getElementById('mobileStart').addEventListener( 'touchmove', function(e){e.preventDefault();}, false );
             document.getElementById('mobileSelect').addEventListener( 'touchmove', function(e){e.preventDefault();}, false );
 
@@ -187,6 +190,11 @@ class InputController {
         this.Key_Action_B = true;
         this.MobileB = true;
     }
+    mobilePressCUP(event){
+        event.preventDefault();
+        this.Key_Action_CUP = true;
+        this.MobileCUP = true;
+    }
     mobilePressStart(event){
         event.preventDefault();
         this.Key_Action_Start = true;
@@ -208,6 +216,12 @@ class InputController {
         this.MobileB = false;
         this.Key_Action_B = false;
         this.MobileB_Counter=0;
+    }
+    mobileReleaseCUP(event){
+        event.preventDefault();
+        this.MobileCUP = false;
+        this.Key_Action_CUP = true;
+        this.MobileCUP_Counter=0;
     }
     mobileReleaseStart(event){
         event.preventDefault();
