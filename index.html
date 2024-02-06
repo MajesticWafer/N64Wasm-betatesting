@@ -73,46 +73,27 @@
         .nav-tabs .nav-link.active {
             color: #007bff;
         }
-	#panelTop {
+	#panel {
             position: absolute;
             top: 0;
             left: 0;
             width: 100vw;
             height: 100vh;
             background-color: white;
-            transition: top 3.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
-	    z-index: 9999;
-       }
-       #panelBottom {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            background-color: white;
-            transition: bottom 3.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+            opacity: 1;
+            transition: opacity 1s cubic-bezier(0.4, 0, 1, 1);
 	    z-index: 9999;
        }
     </style>
 </head>
 
 <body>
-    <div id="panelTop"></div>
-    <div id="panelBottom"></div>
+    <div id="panel"></div>
     <script>
-    const panel = document.getElementById('panelTop');
+    const panel = document.getElementById('panel');
 
-    setTimeout(() => {
-      panel.style.top = '100vh';
-    }
-  </script>
-    <script>
-    const panel = document.getElementById('panelBottom');
-
-    setTimeout(() => {
-      panel.style.bottom = '100vh';
-    }
-  </script>
+    panel.style.opacity = 0;
+    </script>
     <div id="maindiv" class="container text-center" style="margin-top: 13px;">
         <h2>
             <b>Nintendo 64 - Web Assembly</b>
