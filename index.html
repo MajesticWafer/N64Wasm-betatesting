@@ -73,10 +73,29 @@
         .nav-tabs .nav-link.active {
             color: #007bff;
         }
+	#panel {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: white;
+            transition: top 1s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+	    z-index: 9999;
+       }
     </style>
 </head>
 
 <body>
+    <div id="panel"></div>
+    <script>
+    const panel = document.getElementById('panel');
+
+    setTimeout(() => {
+      panel.style.top = '100vh'; // Slide down after 0.2 seconds
+    }, 200);
+
+  </script>
     <div id="maindiv" class="container text-center" style="margin-top: 13px;">
         <h2>
             <b>Nintendo 64 - Web Assembly</b>
