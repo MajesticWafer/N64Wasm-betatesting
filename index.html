@@ -81,7 +81,17 @@
             height: 100vh;
             background-color: white;
             opacity: 1;
-            transition: opacity 1s cubic-bezier(0.4, 0, 1, 1);
+            transition: opacity 2s cubic-bezier(0.4, 0, 1, 1);
+	    z-index: 9998;
+       }
+       .imgp {
+            position: absolute;
+            top: (50vh - 50%);
+            left: calc(50vh - 50%);
+            width: 250px;
+            height: auto;
+            background-color: white;
+            transition: top 1.5s cubic-bezier(0.4, 0, 1, 1);
 	    z-index: 9999;
        }
     </style>
@@ -89,12 +99,18 @@
 
 <body>
     <div id="panel"></div>
+    <image id="imgp" class="imgp" src="img-panel">
     <script>
     const panel = document.getElementById('panel');
+    const img = document.getElementById('imgp');
 
     setTimeout(() => {
+      imgp.style.bottom = 100vh;
+    }, 100);    
+	    
+    setTimeout(() => {
       panel.style.opacity = 0;
-    }, 50);    
+    }, 1500);
     </script>
     <div id="maindiv" class="container text-center" style="margin-top: 13px;">
         <h2>
