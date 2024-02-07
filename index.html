@@ -73,45 +73,10 @@
         .nav-tabs .nav-link.active {
             color: #007bff;
         }
-	#panel {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            background-color: white;
-            opacity: 1;
-            transition: opacity 2s cubic-bezier(0.4, 0, 1, 1);
-	    z-index: 9998;
-       }
-       .imgp {
-            position: absolute;
-            top: (50vh - 50%);
-            left: calc(50vh - 50%);
-            width: 250px;
-            height: auto;
-            background-color: white;
-            transition: top 1.5s cubic-bezier(0.4, 0, 1, 1);
-	    z-index: 9999;
-       }
     </style>
 </head>
 
 <body>
-    <div id="panel"></div>
-    <image id="imgp" class="imgp" src="img-panel">
-    <script>
-    const panel = document.getElementById('panel');
-    const img = document.getElementById('imgp');
-
-    setTimeout(() => {
-      imgp.style.bottom = 100vh;
-    }, 100);    
-	    
-    setTimeout(() => {
-      panel.style.opacity = 0;
-    }, 1500);
-    </script>
     <div id="maindiv" class="container text-center" style="margin-top: 13px;">
         <h2>
             <b>Nintendo 64 - Web Assembly</b>
@@ -264,7 +229,7 @@
 
         <!-- ID has to be canvas it's hardcoded in the EM generated .js -->
         <div id="canvasDiv" style="display: none;">
-            <canvas id="canvas" width="640"height="480"></canvas>
+            <canvas id="canvas" width="640"height="480" style="image-rendering: pixelated;"></canvas>
         </div>
 
         <div id="bottomPanel" rv-hide="data.beforeEmulatorStarted">
